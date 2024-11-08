@@ -15,8 +15,8 @@ if not OLLAMA_URL:
     sys.exit(1)
 
 if len(sys.argv) != 3:
-    print("Usage: python script.py <prompt> <source>")
-    print("Example: python script.py 'What does the company do?' 'https://example.com'")
+    print(f"Usage: python {sys.argv[0]} <prompt> <source>")
+    print(f"Example: python {sys.argv[0]} 'What does the company do?' 'https://example.com'")
     sys.exit(1)
 
 prompt = sys.argv[1]
