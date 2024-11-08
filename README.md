@@ -1,8 +1,8 @@
-# Custom scraping script using ScrapeGraphAI
+# Custom Scraping Script using ScrapeGraphAI
 
-Small shell script using ollama and ScrapeGraphAI that takes in a website and ur prompt for quick and easy scrape jobs
+A customizable shell script that integrates **Ollama** and **ScrapeGraphAI** for automated web scraping. It accepts a website URL and a prompt to quickly gather relevant information.
 
-## installation
+## Installation
 
 ### Prerequisites
 
@@ -15,10 +15,14 @@ Small shell script using ollama and ScrapeGraphAI that takes in a website and ur
 
    ```bash
    python3 -m venv scrapeai
-
    ```
 
 3. Activate the environment:
+
+   ```bash
+   source scrapeai/bin/activate  # On macOS/Linux
+   scrapeai\Scripts\activate     # On Windows
+   ```
 
 ### Step 2: Install ScrapeGraphAI
 
@@ -70,4 +74,39 @@ Ollama provides support for running language models locally. Install and configu
    ollama list
    ```
 
-### Step 6: Test the Installation
+### Step 6: Configure Environment Variables
+
+1. Create a `.env` file in your project directory to specify the base URL for Ollama.
+
+   ```plaintext
+   OLLAMA_URL=http://localhost:11434
+   ```
+
+2. Ensure this `.env` file is in the same directory as your Python script.
+
+### Step 7: Test the Installation
+
+To confirm the setup is correct, run a test using the script.
+
+## Usage
+
+Run the script with the following command, replacing `<prompt>` and `<source>` with your desired input:
+
+```bash
+python script.py "<prompt>" "<source>"
+```
+
+### Example
+
+To gather information about a company from a website, use:
+
+```bash
+python script.py "Find some information about what the company does, its name, and a contact email." "https://example.com"
+```
+
+### Command-Line Arguments
+
+The script accepts two command-line arguments:
+
+1. **`<prompt>`**: The prompt specifying the type of information to retrieve.
+2. **`<source>`**: The URL of the website to scrape.
